@@ -48,10 +48,10 @@ On top of that, we will try to provide the user with a visual representation (mo
 
 # Potential Methods:
 For this project, we will be implementing supervised learning methods. We are trying to implement some functionality in our project like-
-Classification of reviews using classification methods such as- TF-IDF VECTORIZER,Gradient Boosting classifier, Naive Bayes, Decision Tree, Neural Networks (probably a transformers if time permits)
-Reviews and the text data will be preprocessed using the following techniques- NLTK library which includes tools for lemmitization, stemming and removing the unnecessary words
-Data visualization for users using- Interactive Plots using the Plotly library
-Data visualization for business owners by comparing various other businesses in the same city.
+Classification of reviews using classification methods such as- TF-IDF VECTORIZER,Gradient Boosting classifier, Naive Bayes, Decision Tree, Neural Networks (probably a transformers if time permits)</br>
+Reviews and the text data will be preprocessed using the following techniques- NLTK library which includes tools for lemmitization, stemming and removing the unnecessary words</br>
+Data visualization for users using- Interactive Plots using the Plotly library</br>
+Data visualization for business owners by comparing various other businesses in the same city.</br>
 
 
 
