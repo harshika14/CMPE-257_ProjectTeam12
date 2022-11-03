@@ -4,20 +4,20 @@ Submitted by- Team 12
 
 ### Team members- 
 
-1.Sanika Vijaykumar Karwa  
-github username: sanika-karwa
+1.Sanika Vijaykumar Karwa  <br>
+github username: sanika-karwa 
 https://github.com/sanika-karwa
 
-2.Harshika Shrivastava
+2.Harshika Shrivastava <br>
 github username: harshika14
 https://github.com/harshika14
 
-3.Tirupati Venkata Sri Sai Rama Raju Penmatsa
+3.Tirupati Venkata Sri Sai Rama Raju Penmatsa <br>
 github username: rajuptvs
 https://github.com/rajuptvs
 
 
-4.Swapna Kotha
+4.Swapna Kotha <br>
 github username: kothaswapna
 https://github.com/kothaswapna
 
@@ -48,17 +48,16 @@ On top of that, we will try to provide the user with a visual representation (mo
 
 # Potential Methods:
 For this project, we will be implementing supervised learning methods. We are trying to implement some functionality in our project like-
-Classification of reviews using classification methods such as- TF-IDF VECTORIZER,Gradient Boosting classifier, Naive Bayes, Decision Tree, Neural Networks (probably a transformers if time permits)</br>
-Reviews and the text data will be preprocessed using the following techniques- NLTK library which includes tools for lemmitization, stemming and removing the unnecessary words</br>
-Data visualization for users using- Interactive Plots using the Plotly library</br>
-Data visualization for business owners by comparing various other businesses in the same city.</br>
+Classification of reviews using classification methods such as- TF-IDF VECTORIZER,Gradient Boosting classifier, Naive Bayes, Decision Tree, Neural Networks (probably a transformers if time permits)
+Reviews and the text data will be preprocessed using the following techniques- NLTK library which includes tools for lemmitization, stemming and removing the unnecessary words
+Data visualization for users using- Interactive Plots using the Plotly library
+Data visualization for business owners by comparing various other businesses in the same city.
 
 
 
-#Some questions and conclusions 
+# Some questions and conclusions 
 With our project, we will try to answer some questions like-
 What are the top reviews about this shop?
 How many other related businesses are there in the same city?
-
 
 What is the feedback for any business, are the reviews positive or negative?
