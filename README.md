@@ -52,20 +52,22 @@ For this project, we will be implementing supervised learning methods. We are tr
 Classification of reviews using classification methods such as- TF-IDF VECTORIZER,Gradient Boosting classifier, Naive Bayes, Decision Tree, Neural Networks (probably a transformers if time permits)<br>
 Reviews and the text data will be preprocessed further using the following techniques- NLTK library which includes tools for lemmitization, stemming and removing the unnecessary words <br>
 Data visualization for business owners by comparing various other businesses in the same city. <br>
-So, another column that has been observed is that there is a column for the open/close "status", probably which can be used to check if the customer ratings was the cause of the closure of that particular business.
+So, another column that has been observed is that there is a column for the open/close "status", probably which can be used to check if the customer ratings was the cause of the closure of that particular business.<br>
 
 # PreProcessing Techniques:
 In the Preprocessing, 
 We have downloaded the datasets as a .json files and converted them to csv files respectively.<br>
-Null values have been removed from the detected columns, the detected number of null values are fairly insignificant in comparision to the size of the dataset, so they have been removed. 
+Null values have been removed from the detected columns, the detected number of null values are fairly insignificant in comparision to the size of the dataset, so they have been removed. <br>
 Using the sqldf library, we have gotten the top categories of business and their reviews have been merged.<br>
-Using the Business Id as a unique identifier key, these csv's have been merged to combine the business dataset with the reviews associated to them. 
+Using the Business Id as a unique identifier key, these csv's have been merged to combine the business dataset with the reviews associated to them. <br>
 Data visualization have been plotted for checking the rate of reviews, no of reviews that are positive vs negative reviews- Interactive Plots using the Plotly library <br>
+Feature Engineering to gain some extra info on the polarity of the text using the reviews<br>
 
 # Some of the Challenges which we might face:
 
-Dataset looks fairly clean, but the dataset has some special attributes, which can be further extracted, but currently due to massive size of the dataset, we are still observing the data further.
-Distribution of the rating's seems to indicate that majority of the ratings are positive or neutral at the most, this can make the model biased, this is something that needs to be further looked into while creating a train/test split to have an even split.
+Dataset looks fairly clean, but the dataset has some special attributes, which can be further extracted, but currently due to massive size of the dataset, we are still observing the data further.<br>
+Feature Engineering also would be my one of our challenge, as we would need a better understanding of the domain knowledge.<br>
+Distribution of the rating's seems to indicate that majority of the ratings are positive or neutral at the most, this can make the model biased, this is something that needs to be further looked into while creating a train/test split to have an even split.<br>
 Handling of the .ipynb notebooks would be difficult due to the vast size of the dataset -- Planning to split the .ipynb files for individual tasks <br>
 
 
