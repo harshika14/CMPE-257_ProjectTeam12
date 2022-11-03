@@ -18,13 +18,12 @@ https://github.com/harshika14
 github username: rajuptvs
 https://github.com/rajuptvs
 
-
 4.Swapna Kotha <br>
 github username: kothaswapna
 https://github.com/kothaswapna
 
  
-Note: In the repository, notebook containing preprocessing of data is attached. Also, a pdf file for better visualization of data is included in the repository.
+Note: In the repository, notebook containing preprocessing of data is attached. Also, a pdf file for better visualization of data with all the information is included in the repository. 
  
  
  
