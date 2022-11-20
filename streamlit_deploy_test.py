@@ -17,3 +17,6 @@ def app():
     if st.button("Predict"):
         pred=pipe.predict([review])
         st.write("Your review is rated:",pred[0])
+        
+if __name__=='__main__':
+    app()
