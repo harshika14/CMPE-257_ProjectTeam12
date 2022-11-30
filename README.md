@@ -1,5 +1,5 @@
 # CMPE-257_ProjectTeam12
-## Demo Predicition app hosted [here](https://rajuptvs-cmpe-257-projectteam12-streamlit-deploy-test-mezmgu.streamlit.app/)
+## Demo Predicition app hosted [here](https://rajuptvs-streamlit-deployment-main-e77a8z.streamlit.app/)
 
 Submitted by- Team 12
 
