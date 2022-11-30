@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[27]:
 
 
 # Import Libraries
@@ -13,6 +13,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from sklearn.model_selection import train_test_split
+import pickle
 
 
 # In[3]:
@@ -39,7 +40,7 @@ yelp_ca_restaurants = yelp_restaurants
 print(yelp_ca_restaurants.shape[0])
 
 
-# In[4]:
+# In[5]:
 
 
 # Load all reviews from json
@@ -52,7 +53,7 @@ yelp_review_chunks = pd.read_json(reviews_data_set_path, lines=True,
                       chunksize=chunk_size)
 
 
-# In[5]:
+# In[6]:
 
 
 ca_reviews_list = []
@@ -73,20 +74,20 @@ for review_chunk in yelp_review_chunks:
 ca_reviews_df = pd.concat(ca_reviews_list, ignore_index=True, join='outer', axis=0)
 
 
-# In[6]:
+# In[7]:
 
 
 ca_reviews_df.head()
 
 
-# In[7]:
+# In[8]:
 
 
 ca_reviews_df = ca_reviews_df[['review_text', 'review_stars']]
 ca_reviews_df.head()
 
 
-# In[8]:
+# In[9]:
 
 
 ca_reviews_df.isna().mean()
@@ -195,23 +196,72 @@ print("Proability that test review is positive is "+ str(positive))
 print("Proability that test review is negative is "+ str(negative))
 
 
-# In[43]:
-
-
-# load the model from disk
-loaded_model = pickle.load(open(filename, 'rb'))
-test_review1 = vectorize_reviews.transform(["Super slow service,salads are not good."])
-output1=loaded_model.predict_proba(test_review)
-negative1=round(output[0][0],3)
-positive1=round(output[0][1],3)
-print("Proability that test review is positive is "+ str(positive1))
-print("Proability that test review is negative is "+ str(negative1))
-
-
 # In[ ]:
 
 
 import pickle
 filename = 'finalized_model_logistic _regression.sav'
 pickle.dump(logistic_regression, open(filename, 'wb'))
+
+
+# In[31]:
+
+
+#load the model
+filename = 'finalized_model_logistic _regression.sav'
+logistic_regression = pickle.load(open(filename, 'rb'))
+test_review1 = vectorize_reviews.transform(["Super slow service,salads are not good."])
+output1=logistic_regression.predict_proba(test_review1)
+negative1=round(output1[0][0],3)
+positive1=round(output1[0][1],3)
+print("Proability that test review is positive is "+ str(positive1))
+print("Proability that test review is negative is "+ str(negative1))
+
+
+# In[54]:
+
+
+words_effect_on_sentiment= logistic_regression.coef_[0][:20]
+words_effect_on_sentiment =logistic_regression.coef_[0]
+import numpy as np
+increacing_effects = np.argsort(words_effect_on_sentiment)
+top_most_effected_words_pos = [list(vectorize_reviews.vocabulary_.keys())[list(vectorize_reviews.vocabulary_.values()).index(w)] for w in increacing_effects[range(-1,-21, -1)]]
+print(top_most_effected_words_pos)
+
+
+# In[55]:
+
+
+fig = plt.figure(figsize=(5, 5))
+ax = plt.bar(top_most_effected_words_pos, words_effect_on_sentiment[increacing_effects[range(-1,-21, -1)]])
+plt.title("Top words which effect the positive reviews",fontsize = 10)
+x_locs,x_labels = plt.xticks()
+plt.setp(x_labels, rotation = 90)
+plt.ylabel('words_effect_on_sentiment', fontsize = 10)
+plt.xlabel('Word', fontsize = 10);
+
+
+# In[56]:
+
+
+top_most_effected_words_neg = [list(vectorize_reviews.vocabulary_.keys())[list(vectorize_reviews.vocabulary_.values()).index(w)] for w in increacing_effects[:20]]
+print(top_most_effected_words_neg)
+
+
+# In[57]:
+
+
+fig = plt.figure(figsize=(5, 5))
+ax = plt.bar(top_most_effected_words_neg, words_effect_on_sentiment[increacing_effects[range(-1,-21, -1)]])
+plt.title("Top words which effect the negative reviews",fontsize = 10)
+x_locs,x_labels = plt.xticks()
+plt.setp(x_labels, rotation = 90)
+plt.ylabel('words_effect_on_sentiment', fontsize = 10)
+plt.xlabel('Word', fontsize = 10);
+
+
+# In[ ]:
+
+
+
 
